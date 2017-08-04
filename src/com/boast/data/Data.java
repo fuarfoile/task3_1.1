@@ -8,14 +8,15 @@
 package com.boast.data;
 
 public class Data {
-    public static String[] goods = {"Dell laptop",
-            "Green desk",
-            "White table",
-            "Red cup",
-            "Shirt",
-            "Nokia 3100",
-            "Lenovo monitor",
-            "Logitech mouse"};
+    public static String[] goods = {
+            "Laptop  ",
+            "Desk    ",
+            "Table   ",
+            "Keyboard",
+            "Shirt   ",
+            "Phone   ",
+            "Monitor ",
+            "Mouse   "};
 
     public static Float[] prices = {499.99f,
             49.99f,

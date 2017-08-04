@@ -56,39 +56,20 @@ class Payment {
         static void getSummary () {
             summary = 0;
 
-            System.out.println("Good name       Price       Counts      Good summary");
-            System.out.println("____________________________________________________");
+            System.out.println("Good name\tPrice\t№\tSummary");
+            System.out.println("_______________________________");
 
             for (HashMap.Entry<Integer, Integer> entry : goods.entrySet()) {
                 System.out.print(Data.goods[entry.getKey()]);
-
-                for (int i = 16 - Data.goods[entry.getKey()].length(); i > 0; i--) {
-                    System.out.print(" ");
-                }
-
-                System.out.print(Data.prices[entry.getKey()]);
-
-                for (int i = 17 - (Data.prices[entry.getKey()]).toString().length(); i > 0; i--) {
-                    System.out.print(" ");
-                }
-
-                System.out.print(entry.getValue());
-
-                for (int i = 7 - entry.getValue().toString().length(); i > 0; i--) {
-                    System.out.print(" ");
-                }
-
-                System.out.println(entry.getValue() * Data.prices[entry.getKey()]);
+                System.out.print("\t" + Data.prices[entry.getKey()]);
+                System.out.print("\t" + entry.getValue());
+                System.out.println("\t" + entry.getValue() * Data.prices[entry.getKey()]);
 
                 summary += entry.getValue() * Data.prices[entry.getKey()];
             }
 
-            System.out.println("____________________________________________________");
-            System.out.print("Summary: ");
-
-            for (int i = 31; i > 0; i--) {
-                System.out.print(" ");
-            }
+            System.out.println("_______________________________");
+            System.out.print("Summary:\t");
 
             System.out.println(summary);
         }
@@ -97,7 +78,7 @@ class Payment {
     private STATE state = STATE.NEW;
 
     void addGoodToBin(int goodId) {
-        if (Data.goods.length < goodId) {
+        if (Data.goods.length <= goodId) {
             System.out.println("Good not consist");
             return;
         }
