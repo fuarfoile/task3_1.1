@@ -25,15 +25,12 @@ public class Main {
 
         do {
             inputLine = in.nextLine();
-
             if (inputLine.length() > 0) {
                 payment.addGoodToBin(Integer.parseInt(inputLine));
             }
-
         } while (inputLine.length() > 0);
 
         payment.calcSummary();
-
         payment.setToPending();
 
         do {
